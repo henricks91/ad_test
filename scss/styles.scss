@@ -1,0 +1,239 @@
+/* MAIN STYLESHEET */
+
+/*========== SASS Declarations ===========*/
+
+/*Font Family*/
+$sans-serif: 'Montserrat' , Helvetica, Verdana, sans-serif;
+
+/*Font Weight*/
+$light: 300;
+$normal: 400;
+$semibold: 600;
+$bold: 700;
+$extrabold: 800;
+
+@mixin flexbox {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin flex-direction($direction: row) {
+    @if $direction == row-reverse {
+      -webkit-box-direction: reverse;
+      -webkit-box-orient: horizontal;
+         -moz-box-direction: reverse;
+         -moz-box-orient: horizontal;
+    } @else if $direction == column {
+      -webkit-box-direction: normal;
+       -webkit-box-orient: vertical;
+         -moz-box-direction: normal;
+          -moz-box-orient: vertical;
+    } @else if $direction == column-reverse {
+      -webkit-box-direction: reverse;
+        -webkit-box-orient: vertical;
+         -moz-box-direction: reverse;
+           -moz-box-orient: vertical;
+    } @else {
+       -webkit-box-direction: normal;
+      -webkit-box-orient: horizontal;
+          -moz-box-direction: normal;
+         -moz-box-orient: horizontal;
+    }
+    -webkit-flex-direction: $direction;
+        -ms-flex-direction: $direction;
+            flex-direction: $direction;
+  }
+
+
+
+
+/*========== Presets Declarations ===========*/
+body {
+    font-family: $sans-serif;
+    color: #000;
+    line-height: 1.5;
+}
+
+/*========== Container & Wrappers ===========*/
+.main-wrapper {
+    max-width: 1200px;
+    margin: auto;
+
+    main#main {
+        @include flexbox;
+        @include flex-direction(row);
+        flex-wrap: wrap;
+    }
+
+    #primary {
+        flex-basis: 75%;
+        box-sizing: border-box;
+        padding: 0 10px;
+    }
+
+
+}
+
+
+/*========== Feature Image ===========*/
+.feature__image {
+    background: url(../images/header.jpg) no-repeat;
+    background-size: cover;
+    text-align: center;
+    margin-bottom: 50px;
+
+    &--inner {
+        padding: 100px 0;
+    }
+
+    h1 {
+        font-size: 80px;
+        font-weight: $bold;
+        color: #fff;
+        margin-bottom: 10px;
+        position: relative;
+        font-family: $sans-serif;
+
+        &:after {
+            content: "";
+            height: 1px;
+            width: 265px;
+            background: #fff;
+            display: block;
+            margin: auto;
+            margin-top: 5px;
+        }
+    }
+
+    p {
+        color: #fff;
+        font-size: 25px;
+        letter-spacing: 10px;
+        font-weight: $light;
+        font-family: $sans-serif;
+    }
+}
+
+/*========== News Section ===========*/
+
+.news {
+    @include flexbox;
+    @include flex-direction(row);
+    width: 100%;
+    flex-flow: wrap;
+
+    &__item {
+        margin-bottom: 50px;
+        padding: 0 15px;
+        box-sizing: border-box;
+
+        &--title {
+            font-size: 32px;
+            margin-top: 20px;
+            margin-bottom:10px;
+        }
+
+        &--meta {
+            font-size: 13px;
+            font-weight: $light;
+        }
+
+        &--excerpt {
+            font-size: 18px;
+        }
+
+        &--button {
+            font-size: 15px;
+            font-weight: $light;
+            color: #000;
+            text-decoration: none;
+            display: inline-block;
+
+            &::after {
+                content: "";
+                width: 100%;
+                height: 1px;
+                display: block;
+                background-color: #000;
+            }
+        }
+    }
+
+    &__item.news__full {
+        flex-basis: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__item.news__half {
+        flex-basis: 50%;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+
+/*========== Sidebar =========*/
+#secondary {
+    flex-basis: 25%;
+    box-sizing: border-box;
+    padding: 0 10px;
+
+    & .widget {
+        &__title {
+            margin-top: 0;
+            line-height: 1;
+        }
+
+        &__content {
+
+            &--item {
+
+                .video__image {
+                    position: relative;
+
+                    img {
+                        width: 100%;
+                    }
+
+                    .play {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        -webkit-transform: translate(-50%,-50%);
+                        -moz-transform: translate(-50%,-50%);
+                        -ms-transform: translate(-50%,-50%);
+                        -o-transform: translate(-50%,-50%);
+                        transform: translate(-50%,-50%);
+                        width: 40px;
+                        height: 40px;
+                        display: inline-block;
+                        background: url(../images/svg/play.svg) no-repeat;
+                        background-size: 100%;
+                    }
+
+                }
+                
+                .video__content h4 {
+                    margin-top: 10px;
+                    font-weight: $semibold;
+                    margin-bottom: 15px;
+                }
+
+                .video__content--info {
+                    font-size: 13px;
+                    font-weight: $light;
+                }
+
+            }   
+
+        }
+    }
+}
