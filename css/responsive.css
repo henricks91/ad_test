@@ -1,0 +1,2 @@
+@media screen and (min-width: 768px){.main-wrapper #primary{flex-basis:100%}.main-wrapper #primary .news__item--title{font-size:26px}.main-wrapper #secondary{flex-basis:100%}.feature__image h1{font-size:60px}.feature__image p{font-size:22px}}@media screen and (min-width: 1024px){.main-wrapper #primary{flex-basis:75%;padding-left:0}.main-wrapper #primary .news__item--title{font-size:32px}.main-wrapper #secondary{flex-basis:25%}.main-wrapper .feature__image h1{font-size:80px}.main-wrapper .feature__image p{font-size:25px}}
+/*# sourceMappingURL=responsive.css.map */

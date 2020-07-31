@@ -45,7 +45,7 @@ $extrabold: 800;
     -webkit-flex-direction: $direction;
         -ms-flex-direction: $direction;
             flex-direction: $direction;
-  }
+}
 
 
 
@@ -55,6 +55,8 @@ body {
     font-family: $sans-serif;
     color: #000;
     line-height: 1.5;
+    padding: 0;
+    margin: 0;
 }
 
 /*========== Container & Wrappers ===========*/
@@ -69,7 +71,6 @@ body {
     }
 
     #primary {
-        flex-basis: 75%;
         box-sizing: border-box;
         padding: 0 10px;
     }
@@ -90,7 +91,6 @@ body {
     }
 
     h1 {
-        font-size: 80px;
         font-weight: $bold;
         color: #fff;
         margin-bottom: 10px;
@@ -110,7 +110,6 @@ body {
 
     p {
         color: #fff;
-        font-size: 25px;
         letter-spacing: 10px;
         font-weight: $light;
         font-family: $sans-serif;
@@ -131,7 +130,6 @@ body {
         box-sizing: border-box;
 
         &--title {
-            font-size: 32px;
             margin-top: 20px;
             margin-bottom:10px;
         }
@@ -225,6 +223,7 @@ body {
                     margin-top: 10px;
                     font-weight: $semibold;
                     margin-bottom: 15px;
+                    font-size: 15px;
                 }
 
                 .video__content--info {
